@@ -1,0 +1,131 @@
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+*,*::after,*::before{
+    box-sizing: inherit;
+    padding:0;
+    margin:0;
+}
+
+
+body{
+    font-size: 0.9375rem;
+    background-color: $vDarkBlue;
+    height: 100vh;
+    display:flex;
+    align-items: center;
+}
+.container{
+    margin:5rem auto;
+    max-width:75rem;
+}
+img{
+    width:100%;
+}
+
+
+.card{
+    width:18.75rem;
+    border-radius:.3125rem;
+    background-color:$darkDBlue;
+    overflow: hidden;
+}
+
+@media (min-width:48em){
+    .card{
+        display: flex;
+        width:56.25rem;
+        height:21.875rem;
+        flex-direction: row-reverse;
+    }
+}
+
+.card__img{
+    width:100%;
+    height:12.5rem;
+    background-image: url('../img/image-header-mobile.jpg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+
+    @media (min-width:48em){
+        height: 100%;
+    }
+
+    &::after{
+        background-color:$softViolet;
+        content:'';
+        position: absolute;
+        top:0; right:0;bottom: 0;left: 0;
+        opacity: .2;
+    }
+}
+
+
+.card__info{
+    padding:1.3rem;
+
+    @media (max-width:47.9375em){
+        text-align: center;
+    }
+    
+    @media (min-width:48em){    
+        padding:3.6rem 4rem; 
+    }
+
+    h1{
+        font-family:$lexend;
+        color:$white;
+        font-weight: 700;
+        font-size: 1.5625rem;
+        margin-bottom:1rem;
+
+        span{
+            color:$softViolet;
+        }   
+    }
+    
+    p{
+        font-family: $inter;
+        color:$stWhite;
+        font-weight: 400;
+        margin-bottom: 2rem;
+        line-height: 1.7;
+        opacity:.6;
+        font-size: .8rem;
+                
+        @media (min-width:48em){
+            margin-bottom: 3rem; 
+        }
+    }
+    
+}
+
+
+@media (min-width:48em){
+    .card__stats{
+        display: flex;
+        justify-content: space-between;
+        width:80%;
+    }
+    
+}
+
+
+.stats{
+    margin-bottom: 1.3rem;
+    h2{
+        color:$white;
+        font-family:$inter;
+        margin-bottom: .6rem;
+    }
+     h3{
+        color:$stWhite;
+        font-family:$inter;
+        opacity:.6;
+        font-weight: 400;
+        font-size: .8rem;
+    }
+}
